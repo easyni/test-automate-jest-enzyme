@@ -1,0 +1,29 @@
+{
+  "name": "testautomate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": ">=8"
+  },
+  "bin": {
+    "test-automate-jest-enzyme": "./cli.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "export-cli": "babel src --out-dir lib --presets=env,stage-0,stage-1,stage-2,stage-3",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nicolas Ribes",
+  "license": "ISC",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "inquirer": "^6.0.0",
+    "inquirer-directory": "^2.1.0"
+  }
+}

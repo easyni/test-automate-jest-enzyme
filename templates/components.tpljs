@@ -1,0 +1,25 @@
+import React from 'react';
+import { mount } from 'enzyme';
+import %%componentName%% from './%%componentName%%.js';
+
+describe('<%%componentName%% />', () => {
+  let props;
+  let mounted%%componentName%%;
+
+  const create%%componentName%% = () => {
+    if (!mounted%%componentName%%) {
+      mounted%%componentName%% = mount(<%%componentName%% {...props} />);
+    }
+    return mounted%%componentName%%;
+  };
+
+  beforeEach(() => {
+    props = {};
+    mounted%%componentName%% = undefined;
+  });
+
+  it('should make a test for <%%componentName%% />', () => {
+    expect(1).toBe(1);
+  });
+});
+

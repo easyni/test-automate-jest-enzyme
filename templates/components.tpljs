@@ -1,25 +1,45 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import %%componentName%% from './%%componentName%%.js';
+import {{componentName}} from './{{componentName}}.js';
 
-describe('<%%componentName%% />', () => {
+describe('<{{componentName}} />', () => {
   let props;
-  let mounted%%componentName%%;
+  let mounted{{componentName}};
 
-  const create%%componentName%% = () => {
-    if (!mounted%%componentName%%) {
-      mounted%%componentName%% = mount(<%%componentName%% {...props} />);
+  const create{{componentName}} = () => {
+    if (!mounted{{componentName}}) {
+      mounted{{componentName}} = mount(<{{componentName}} {...props} />);
     }
-    return mounted%%componentName%%;
+    return mounted{{componentName}};
   };
 
   beforeEach(() => {
-    props = {};
-    mounted%%componentName%% = undefined;
+    props = {
+      {{#requiredProps}}
+        {{key}}: {{{value}}},
+      {{/requiredProps}}
+    };
+    mounted{{componentName}} = undefined;
   });
 
-  it('should make a test for <%%componentName%% />', () => {
+  it('should make a test for <{{componentName}} />', () => {
     expect(1).toBe(1);
   });
+
+  {{#props}}
+  describe('when the prop `{{key}}` is passed', () => {
+    beforeEach(() => {
+      props = {
+        ...props,
+        {{key}}: {{{value}}}
+      };
+    });
+
+    it('should have props `{{key}}` in <{{componentName}} />', () => {
+      const {{componentName}}Tested = create{{componentName}}();
+      expect({{componentName}}Tested.prop('{{key}}')).toBe(props.{{key}});
+    });
+  });
+  {{/props}}
 });
 

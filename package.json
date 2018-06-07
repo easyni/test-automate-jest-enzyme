@@ -11,7 +11,8 @@
   },
   "scripts": {
     "start": "node index.js",
-    "export-cli": "babel src --out-dir lib --presets=env,stage-0,stage-1,stage-2,stage-3",
+    "dev": "NODE_ENV=development node --inspect index.js",
+    "export-cli": "babel src --out-dir lib --presets=env,stage-0,stage-1,stage-2,stage-3,react",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Nicolas Ribes",
@@ -19,11 +20,22 @@
   "dependencies": {
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
     "babel-register": "^6.26.0",
+    "esprima": "^4.0.0",
     "inquirer": "^6.0.0",
-    "inquirer-directory": "^2.1.0"
+    "inquirer-directory": "^2.1.0",
+    "mustache": "^2.3.0",
+    "parse-js": "^0.5.2",
+    "react": "^16.4.0",
+    "uglify-js": "^3.4.0",
+    "uglifyjs": "^2.4.11"
   }
 }

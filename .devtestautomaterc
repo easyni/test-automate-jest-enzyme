@@ -1,0 +1,24 @@
+{
+  "tests": [
+    {
+      "name": "component-dev",
+      "label": "component (jest enzyme) dev",
+      "processFile": "./src/process/componentProcess.js"
+    },
+    {
+      "name": "function-dev",
+      "label": "function (jest)",
+      "processFile": "./src/process/functionProcess.js"
+    },
+    {
+      "name": "reducer-dev",
+      "label": "reducer (jest)",
+      "processFile": "./src/process/reducerProcess.js"
+    },
+    {
+      "name": "action-redux-dev",
+      "label": "action redux (jest)",
+      "processFile": "./src/process/actionProcess.js"
+    }
+  ]
+}

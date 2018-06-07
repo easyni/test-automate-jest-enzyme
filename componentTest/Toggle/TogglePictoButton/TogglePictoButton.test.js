@@ -15,11 +15,11 @@ describe('<TogglePictoButton />', () => {
 
   beforeEach(() => {
     props = {
-        classes: {},
-        type: '',
+        classes: { test: 'a string'},
+        type: 'a string',
         onToggle: () => null,
-        label: '',
-        active: true,
+        label: 'a string',
+        active: true
     };
     mountedTogglePictoButton = undefined;
   });
@@ -28,11 +28,11 @@ describe('<TogglePictoButton />', () => {
     expect(1).toBe(1);
   });
 
-  describe('when the prop `classes` is not passed', () => {
+  describe('when the prop `classes` is passed', () => {
     beforeEach(() => {
       props = {
         ...props,
-        classes: {}
+        classes: { test: 'a string'}
       };
     });
 
@@ -41,11 +41,12 @@ describe('<TogglePictoButton />', () => {
       expect(TogglePictoButtonTested.prop('classes')).toBe(props.classes);
     });
   });
-  describe('when the prop `type` is not passed', () => {
+
+  describe('when the prop `type` is passed', () => {
     beforeEach(() => {
       props = {
         ...props,
-        type: ''
+        type: 'a string'
       };
     });
 
@@ -54,7 +55,8 @@ describe('<TogglePictoButton />', () => {
       expect(TogglePictoButtonTested.prop('type')).toBe(props.type);
     });
   });
-  describe('when the prop `onToggle` is not passed', () => {
+
+  describe('when the prop `onToggle` is passed', () => {
     beforeEach(() => {
       props = {
         ...props,
@@ -67,11 +69,12 @@ describe('<TogglePictoButton />', () => {
       expect(TogglePictoButtonTested.prop('onToggle')).toBe(props.onToggle);
     });
   });
-  describe('when the prop `label` is not passed', () => {
+
+  describe('when the prop `label` is passed', () => {
     beforeEach(() => {
       props = {
         ...props,
-        label: ''
+        label: 'a string'
       };
     });
 
@@ -80,7 +83,8 @@ describe('<TogglePictoButton />', () => {
       expect(TogglePictoButtonTested.prop('label')).toBe(props.label);
     });
   });
-  describe('when the prop `active` is not passed', () => {
+
+  describe('when the prop `active` is passed', () => {
     beforeEach(() => {
       props = {
         ...props,
@@ -93,5 +97,6 @@ describe('<TogglePictoButton />', () => {
       expect(TogglePictoButtonTested.prop('active')).toBe(props.active);
     });
   });
+
 });
 

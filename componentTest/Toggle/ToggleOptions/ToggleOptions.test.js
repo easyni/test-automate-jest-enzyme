@@ -17,9 +17,8 @@ describe('<ToggleOptions />', () => {
     props = {
         active: true,
         onToggle: () => null,
-        children: {},
-        type: '',
-        label: '',
+        type: 'a string',
+        label: 'a string'
     };
     mountedToggleOptions = undefined;
   });
@@ -28,7 +27,7 @@ describe('<ToggleOptions />', () => {
     expect(1).toBe(1);
   });
 
-  describe('when the prop `active` is not passed', () => {
+  describe('when the prop `active` is passed', () => {
     beforeEach(() => {
       props = {
         ...props,
@@ -41,7 +40,8 @@ describe('<ToggleOptions />', () => {
       expect(ToggleOptionsTested.prop('active')).toBe(props.active);
     });
   });
-  describe('when the prop `onToggle` is not passed', () => {
+
+  describe('when the prop `onToggle` is passed', () => {
     beforeEach(() => {
       props = {
         ...props,
@@ -54,11 +54,12 @@ describe('<ToggleOptions />', () => {
       expect(ToggleOptionsTested.prop('onToggle')).toBe(props.onToggle);
     });
   });
-  describe('when the prop `children` is not passed', () => {
+
+  describe('when the prop `children` is passed', () => {
     beforeEach(() => {
       props = {
         ...props,
-        children: {}
+        children: <div></div>
       };
     });
 
@@ -67,11 +68,12 @@ describe('<ToggleOptions />', () => {
       expect(ToggleOptionsTested.prop('children')).toBe(props.children);
     });
   });
-  describe('when the prop `type` is not passed', () => {
+
+  describe('when the prop `type` is passed', () => {
     beforeEach(() => {
       props = {
         ...props,
-        type: ''
+        type: 'a string'
       };
     });
 
@@ -80,11 +82,12 @@ describe('<ToggleOptions />', () => {
       expect(ToggleOptionsTested.prop('type')).toBe(props.type);
     });
   });
-  describe('when the prop `label` is not passed', () => {
+
+  describe('when the prop `label` is passed', () => {
     beforeEach(() => {
       props = {
         ...props,
-        label: ''
+        label: 'a string'
       };
     });
 
@@ -93,5 +96,6 @@ describe('<ToggleOptions />', () => {
       expect(ToggleOptionsTested.prop('label')).toBe(props.label);
     });
   });
+
 });
 

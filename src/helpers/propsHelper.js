@@ -5,16 +5,16 @@ export const getAPropsValue = (type) => {
     case 'bool':
       return 'true';
     case 'string':
-      return '\'\'';
+      return '\'a string\'';
     case 'array':
-      return '[]';
+      return '[1, 2, 3]';
     case 'number':
       return '1';
     case 'object':
-      return '{}';
+      return '{ test: \'a string\'}';
     case 'element':
       return '<div></div>';
     default:
-      return '{}';
+      return 'null // toDo you need to mock it';
   }
 };

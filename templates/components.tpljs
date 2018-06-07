@@ -16,7 +16,7 @@ describe('<{{componentName}} />', () => {
   beforeEach(() => {
     props = {
       {{#requiredProps}}
-        {{key}}: {{{value}}},
+        {{{.}}}
       {{/requiredProps}}
     };
     mounted{{componentName}} = undefined;
@@ -40,6 +40,7 @@ describe('<{{componentName}} />', () => {
       expect({{componentName}}Tested.prop('{{key}}')).toBe(props.{{key}});
     });
   });
+
   {{/props}}
 });
 

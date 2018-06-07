@@ -15,7 +15,7 @@ describe('<PaymentOptions />', () => {
 
   beforeEach(() => {
     props = {
-        intl: {},
+        intl: null // toDo you need to mock it
     };
     mountedPaymentOptions = undefined;
   });
@@ -24,11 +24,11 @@ describe('<PaymentOptions />', () => {
     expect(1).toBe(1);
   });
 
-  describe('when the prop `intl` is not passed', () => {
+  describe('when the prop `intl` is passed', () => {
     beforeEach(() => {
       props = {
         ...props,
-        intl: {}
+        intl: null // toDo you need to mock it
       };
     });
 
@@ -37,5 +37,6 @@ describe('<PaymentOptions />', () => {
       expect(PaymentOptionsTested.prop('intl')).toBe(props.intl);
     });
   });
+
 });
 

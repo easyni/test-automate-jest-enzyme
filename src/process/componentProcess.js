@@ -1,6 +1,6 @@
 import { transformFileSync } from 'babel-core';
 import Mustache from 'mustache';
-import { getDefaultExportName, getAllProps } from '../helpers/astHelper';
+import { getDefaultExportName, getAllProps, getRequiredProps } from '../helpers/astHelper';
 import { existsSync, readFileSync, writeFile } from 'fs';
 
 const componentTemplate = `${__dirname}/../../templates/components.tpljs`;
@@ -14,19 +14,24 @@ export const processFiles = ({filePath, fileName}) => {
         return null
       }
 
-      const allProps = getAllProps(ast, componentName);
-
-      console.log(allProps);
+      const props = getAllProps(ast, componentName);
+      const requiredProps = getRequiredProps(props);
 
       const testFileBaseName = fileName.replace('.js', '');
       const template = readFileSync(componentTemplate, 'utf8');
+
       const myContentBase =  Mustache.render(template, {
         componentName,
-        props: allProps,
-        requiredProps: allProps,
+        props,
+        requiredProps,
+        requiredProps: function () {
+          return requiredProps.map((prop, key) => `${prop.key}: ${prop.value}${(key<requiredProps.length-1 && ',') || ''}`);
+        }
       });
+
       const testFileName = `${testFileBaseName}.test.js`;
       const testFilePath = `${filePath.replace(fileName, '')}${testFileName}`;
+
       if(!existsSync(testFilePath)) {
         writeFile(testFilePath, myContentBase, function(err) {
           if(err) {

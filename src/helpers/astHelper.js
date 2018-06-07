@@ -34,11 +34,15 @@ export const getDefaultExportName = (ast) => {
 export const cleanAstProps = (props) => {
   const CleanedProps = [];
   props.forEach((prop) => {
+    const type = prop.value && prop.value.property && prop.value.property.name && (
+      (prop.value.property.name === 'isRequired' && prop.value.object && prop.value.object.property && prop.value.object.property.name) ||
+      (prop.value.property.name)
+    ) || null;
     const myProps = {
       key: (prop.key && prop.key.name) || null,
-      type: (prop.value && prop.value.object && prop.value.object.property && prop.value.object.property.name) || null,
+      type,
       isRequired: (prop.value && prop.value.property && prop.value.property.name === 'isRequired') || false,
-      value: getAPropsValue((prop.value && prop.value.object && prop.value.object.property && prop.value.object.property.name) || null)
+      value: getAPropsValue(type)
     };
   CleanedProps.push(myProps);
   });
@@ -68,4 +72,8 @@ export const getAllProps = (ast, ComponentName) => {
     }
   });
   return props || null
+};
+
+export const getRequiredProps = (props) => {
+  return props.filter((prop) => prop.isRequired)
 };

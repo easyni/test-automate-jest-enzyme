@@ -1,5 +1,5 @@
 export const getAPropsValue = (type) => {
-  switch(type) {
+  switch (type) {
     case 'func':
       return '() => null';
     case 'bool':
@@ -18,3 +18,10 @@ export const getAPropsValue = (type) => {
       return 'null // toDo you need to mock it';
   }
 };
+export const isPropsTakeIncharge = type => type === 'func' ||
+    type === 'bool' ||
+    type === 'string' ||
+    type === 'array' ||
+    type === 'number' ||
+    type === 'object' ||
+    type === 'element';

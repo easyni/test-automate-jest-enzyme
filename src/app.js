@@ -4,13 +4,13 @@ import { processFiles } from './processFiles';
 function startApp() {
   questions()
     .then((answers) => {
-      processFiles(answers)
+      processFiles(answers);
     }).catch((error) => {
-    if(error) {
-      throw error;
-    }
-    startApp()
-  });
+      if (error) {
+        throw error;
+      }
+      startApp();
+    });
 }
 
 startApp();

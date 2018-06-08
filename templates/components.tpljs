@@ -35,9 +35,15 @@ describe('<{{componentName}} />', () => {
       };
     });
 
-    it('should have props `{{key}}` in <{{componentName}} />', () => {
-      const {{componentName}}Tested = create{{componentName}}();
-      expect({{componentName}}Tested.prop('{{key}}')).toBe(props.{{key}});
+    it('should have property `{{key}}` in <{{componentName}} />', () => {
+      {{#propsExist}}
+        const {{componentName}}Tested = create{{componentName}}();
+        expect({{componentName}}Tested.prop('{{key}}')).toBe(props.{{key}});
+      {{/propsExist}}
+      {{^propsExist}}
+        // toDo you need to test this mocked  property
+        expect(1).toBe(1);
+      {{/propsExist}}
     });
   });
 

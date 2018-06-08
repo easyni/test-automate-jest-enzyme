@@ -1,4 +1,2 @@
 // todo process for reducer
-export const processFiles = ({filePath, fileName, templateFile}) => {
-  return Promise.resolve();
-};
+export const processFiles = ({ filePath, fileName, templateFile }) => Promise.resolve(); // eslint-disable-line

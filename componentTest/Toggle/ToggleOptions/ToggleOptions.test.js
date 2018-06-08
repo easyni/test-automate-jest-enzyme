@@ -35,9 +35,9 @@ describe('<ToggleOptions />', () => {
       };
     });
 
-    it('should have props `active` in <ToggleOptions />', () => {
-      const ToggleOptionsTested = createToggleOptions();
-      expect(ToggleOptionsTested.prop('active')).toBe(props.active);
+    it('should have property `active` in <ToggleOptions />', () => {
+        const ToggleOptionsTested = createToggleOptions();
+        expect(ToggleOptionsTested.prop('active')).toBe(props.active);
     });
   });
 
@@ -49,9 +49,9 @@ describe('<ToggleOptions />', () => {
       };
     });
 
-    it('should have props `onToggle` in <ToggleOptions />', () => {
-      const ToggleOptionsTested = createToggleOptions();
-      expect(ToggleOptionsTested.prop('onToggle')).toBe(props.onToggle);
+    it('should have property `onToggle` in <ToggleOptions />', () => {
+        const ToggleOptionsTested = createToggleOptions();
+        expect(ToggleOptionsTested.prop('onToggle')).toBe(props.onToggle);
     });
   });
 
@@ -63,9 +63,9 @@ describe('<ToggleOptions />', () => {
       };
     });
 
-    it('should have props `children` in <ToggleOptions />', () => {
-      const ToggleOptionsTested = createToggleOptions();
-      expect(ToggleOptionsTested.prop('children')).toBe(props.children);
+    it('should have property `children` in <ToggleOptions />', () => {
+        const ToggleOptionsTested = createToggleOptions();
+        expect(ToggleOptionsTested.prop('children')).toBe(props.children);
     });
   });
 
@@ -77,9 +77,9 @@ describe('<ToggleOptions />', () => {
       };
     });
 
-    it('should have props `type` in <ToggleOptions />', () => {
-      const ToggleOptionsTested = createToggleOptions();
-      expect(ToggleOptionsTested.prop('type')).toBe(props.type);
+    it('should have property `type` in <ToggleOptions />', () => {
+        const ToggleOptionsTested = createToggleOptions();
+        expect(ToggleOptionsTested.prop('type')).toBe(props.type);
     });
   });
 
@@ -91,9 +91,9 @@ describe('<ToggleOptions />', () => {
       };
     });
 
-    it('should have props `label` in <ToggleOptions />', () => {
-      const ToggleOptionsTested = createToggleOptions();
-      expect(ToggleOptionsTested.prop('label')).toBe(props.label);
+    it('should have property `label` in <ToggleOptions />', () => {
+        const ToggleOptionsTested = createToggleOptions();
+        expect(ToggleOptionsTested.prop('label')).toBe(props.label);
     });
   });
 

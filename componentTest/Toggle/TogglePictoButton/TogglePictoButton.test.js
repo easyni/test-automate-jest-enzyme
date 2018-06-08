@@ -36,9 +36,9 @@ describe('<TogglePictoButton />', () => {
       };
     });
 
-    it('should have props `classes` in <TogglePictoButton />', () => {
-      const TogglePictoButtonTested = createTogglePictoButton();
-      expect(TogglePictoButtonTested.prop('classes')).toBe(props.classes);
+    it('should have property `classes` in <TogglePictoButton />', () => {
+        const TogglePictoButtonTested = createTogglePictoButton();
+        expect(TogglePictoButtonTested.prop('classes')).toBe(props.classes);
     });
   });
 
@@ -50,9 +50,9 @@ describe('<TogglePictoButton />', () => {
       };
     });
 
-    it('should have props `type` in <TogglePictoButton />', () => {
-      const TogglePictoButtonTested = createTogglePictoButton();
-      expect(TogglePictoButtonTested.prop('type')).toBe(props.type);
+    it('should have property `type` in <TogglePictoButton />', () => {
+        const TogglePictoButtonTested = createTogglePictoButton();
+        expect(TogglePictoButtonTested.prop('type')).toBe(props.type);
     });
   });
 
@@ -64,9 +64,9 @@ describe('<TogglePictoButton />', () => {
       };
     });
 
-    it('should have props `onToggle` in <TogglePictoButton />', () => {
-      const TogglePictoButtonTested = createTogglePictoButton();
-      expect(TogglePictoButtonTested.prop('onToggle')).toBe(props.onToggle);
+    it('should have property `onToggle` in <TogglePictoButton />', () => {
+        const TogglePictoButtonTested = createTogglePictoButton();
+        expect(TogglePictoButtonTested.prop('onToggle')).toBe(props.onToggle);
     });
   });
 
@@ -78,9 +78,9 @@ describe('<TogglePictoButton />', () => {
       };
     });
 
-    it('should have props `label` in <TogglePictoButton />', () => {
-      const TogglePictoButtonTested = createTogglePictoButton();
-      expect(TogglePictoButtonTested.prop('label')).toBe(props.label);
+    it('should have property `label` in <TogglePictoButton />', () => {
+        const TogglePictoButtonTested = createTogglePictoButton();
+        expect(TogglePictoButtonTested.prop('label')).toBe(props.label);
     });
   });
 
@@ -92,9 +92,9 @@ describe('<TogglePictoButton />', () => {
       };
     });
 
-    it('should have props `active` in <TogglePictoButton />', () => {
-      const TogglePictoButtonTested = createTogglePictoButton();
-      expect(TogglePictoButtonTested.prop('active')).toBe(props.active);
+    it('should have property `active` in <TogglePictoButton />', () => {
+        const TogglePictoButtonTested = createTogglePictoButton();
+        expect(TogglePictoButtonTested.prop('active')).toBe(props.active);
     });
   });
 

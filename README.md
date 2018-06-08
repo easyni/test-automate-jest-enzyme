@@ -1,4 +1,7 @@
 # README
+
+[![CircleCI](https://circleci.com/gh/easyni/test-automate-jest-enzyme/tree/master.svg?style=svg)](https://circleci.com/gh/easyni/test-automate-jest-enzyme/tree/master)
+
 ⚠️ ⚠️ ⚠️ 
 this project is WIP.
 ⚠️ ⚠️ ⚠️ 

@@ -73,3 +73,21 @@ export const processFiles = ({filePath, fileName}) => {
     //... do what you want
 }
  ```
+ ## CURRENTLY AVAILABLE
+ 
+| Process            | available|
+|--------------------|----------|
+|component           |   yes    |
+|function            |    no    |
+|reducer             |    no    |
+|action redux        |    no    |
+
+## ROAD MAP
+
+| Version   |  description                                       |
+|-----------|----------------------------------------------------|
+| 0.1.0     | add possibility to override presets in the rc file |
+| 0.1.1     | make the process fot testing functions             |
+| 0.1.2     | make the process fot testing reducers              |
+| 0.1.3     | make the process fot testing actions redux         |
+

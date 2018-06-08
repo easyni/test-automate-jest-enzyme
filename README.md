@@ -86,6 +86,7 @@ export const processFiles = ({filePath, fileName}) => {
 
 | Version   |  description                                       |
 |-----------|----------------------------------------------------|
+| 0.0       | optimise the processing files system               |
 | 0.1.0     | add possibility to override presets in the rc file |
 | 0.1.1     | make the process fot testing functions             |
 | 0.1.2     | make the process fot testing reducers              |

@@ -16,7 +16,7 @@ describe('<{{componentName}} />', () => {
   beforeEach(() => {
     props = {
       {{#requiredProps}}
-        {{{.}}}
+      {{{.}}}
       {{/requiredProps}}
     };
     mounted{{componentName}} = undefined;
@@ -37,12 +37,12 @@ describe('<{{componentName}} />', () => {
 
     it('should have property `{{key}}` in <{{componentName}} />', () => {
       {{#propsExist}}
-        const {{componentName}}Tested = create{{componentName}}();
-        expect({{componentName}}Tested.prop('{{key}}')).toBe(props.{{key}});
+      const {{componentName}}Tested = create{{componentName}}();
+      expect({{componentName}}Tested.prop('{{key}}')).toBe(props.{{key}});
       {{/propsExist}}
       {{^propsExist}}
-        // toDo you need to test this mocked  property
-        expect(1).toBe(1);
+      // toDo you need to test this mocked  property
+      expect(1).toBe(1);
       {{/propsExist}}
     });
   });

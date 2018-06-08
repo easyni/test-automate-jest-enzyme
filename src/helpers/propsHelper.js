@@ -11,7 +11,7 @@ export const getAPropsValue = (type) => {
     case 'number':
       return '1';
     case 'object':
-      return '{ test: \'a string\'}';
+      return '{ test: \'a string\' }';
     case 'element':
       return '<div></div>';
     default:

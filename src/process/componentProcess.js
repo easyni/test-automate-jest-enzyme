@@ -1,4 +1,10 @@
 import { existsSync, readFileSync, writeFile } from 'fs';
+import env from 'babel-preset-env';
+import stage0 from 'babel-preset-stage-0';
+import stage1 from 'babel-preset-stage-1';
+import stage2 from 'babel-preset-stage-2';
+import stage3 from 'babel-preset-stage-3';
+import react from 'babel-preset-react';
 import { transformFileSync } from 'babel-core';
 import Mustache from 'mustache';
 import { getDefaultExportName, getAllProps, getRequiredProps } from '../helpers/astHelper';
@@ -9,7 +15,8 @@ const componentTemplate = `${__dirname}/../../templates/components.tpljs`;
 export const processFiles = ({ filePath, fileName }) => {
   if (filePath.match(/^\S*(?<!index)(?<!test)\.js$/gi)) {
     return new Promise((resolve) => {
-      const { ast } = transformFileSync(filePath, { presets: ['env', 'stage-0', 'stage-1', 'stage-2', 'stage-3', 'react'] });
+      const { ast } =
+        transformFileSync(filePath, { presets: [env, stage0, stage1, stage2, stage3, react] });
       const componentName = getDefaultExportName(ast);
       if (!componentName) {
         return null;
@@ -22,7 +29,7 @@ export const processFiles = ({ filePath, fileName }) => {
       const template = readFileSync(componentTemplate, 'utf8');
 
       const myContentBase = Mustache.render(template, {
-        componentName,
+        componentName: testFileBaseName,
         props,
         propsExist() {
           return isPropsTakeIncharge(this.type);

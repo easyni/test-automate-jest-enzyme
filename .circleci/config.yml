@@ -22,7 +22,6 @@ jobs:
                 paths:
                     - node_modules
                 key: v1-dependencies-{{ checksum "package.json" }}
-
     lint:
         working_directory: ~/repo
         docker:
@@ -30,7 +29,6 @@ jobs:
         steps:
             - checkout
             - run: yarn lint
-
 
 workflows:
     version: 2

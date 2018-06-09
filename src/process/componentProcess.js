@@ -8,7 +8,7 @@ import react from 'babel-preset-react';
 import { transformFileSync } from 'babel-core';
 import Mustache from 'mustache';
 import { getDefaultExportName, getAllProps, getRequiredProps } from '../helpers/astHelper';
-import { isPropsTakeIncharge } from '../helpers/propsHelper';
+import { isPropsTakeInCharge, isTheLastProps } from '../helpers/propsHelper';
 
 const componentTemplate = `${__dirname}/../../templates/components.tpljs`;
 
@@ -32,10 +32,14 @@ export const processFiles = ({ filePath, fileName }) => {
         componentName: testFileBaseName,
         props,
         propsExist() {
-          return isPropsTakeIncharge(this.type);
+          return isPropsTakeInCharge(this.type);
         },
-        requiredProps() {
-          return requiredProps.map((prop, key) => `${prop.key}: ${prop.value}${(key < requiredProps.length - 1 && ',') || ''}`);
+        requiredProps,
+        coma() {
+          return isTheLastProps(this.key, requiredProps);
+        },
+        warning() {
+          return !isPropsTakeInCharge(this.type);
         },
       });
 

@@ -15,13 +15,17 @@ export const getAPropsValue = (type) => {
     case 'element':
       return '<div></div>';
     default:
-      return 'null // toDo you need to mock it';
+      return 'null';
   }
 };
-export const isPropsTakeIncharge = type => type === 'func' ||
-    type === 'bool' ||
-    type === 'string' ||
-    type === 'array' ||
-    type === 'number' ||
-    type === 'object' ||
-    type === 'element';
+
+export const isPropsTakeInCharge = type => type === 'func' ||
+  type === 'bool' ||
+  type === 'string' ||
+  type === 'array' ||
+  type === 'number' ||
+  type === 'object' ||
+  type === 'element';
+
+export const isTheLastProps = (key, props) =>
+  props[props.length - 1].key && props[props.length - 1].key === key;

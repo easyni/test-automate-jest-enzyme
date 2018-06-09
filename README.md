@@ -40,7 +40,7 @@ you can add your own processors in addition to existing ones with an .testautoma
     },
     {
       "name": "function",
-      "label": "function (jest )",
+      "label": "function (jest)",
       "processFile": "./lib/process/functionProcess.js"
     },
     {
@@ -61,7 +61,7 @@ you can add your own processors in addition to existing ones with an .testautoma
   
   **label** > label is displayed during the information collect
    
-  **processFile** > the process file will parse all yours files, and generate your test file.
+  **processFile** > the script will receive all the files, and generate your test file.
 
  ⚠️ ⚠️ ⚠️ 
  
@@ -88,7 +88,7 @@ export const processFiles = ({filePath, fileName}) => {
 |-----------|----------------------------------------------------|
 | 0.0       | optimise the processing files system               |
 | 0.1.0     | add possibility to override presets in the rc file |
-| 0.1.1     | make the process fot testing functions             |
-| 0.1.2     | make the process fot testing reducers              |
-| 0.1.3     | make the process fot testing actions redux         |
+| 0.1.1     | make the process for testing functions             |
+| 0.1.2     | make the process for testing reducers              |
+| 0.1.3     | make the process for testing actions redux         |
 

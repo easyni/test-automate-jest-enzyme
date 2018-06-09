@@ -35,7 +35,7 @@ export const processFiles = ({ filePath, fileName }) => {
           return isPropsTakeInCharge(this.type);
         },
         requiredProps,
-        coma() {
+        comma() {
           return isTheLastProps(this.key, requiredProps);
         },
         warning() {

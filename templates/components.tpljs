@@ -16,7 +16,7 @@ describe('<{{componentName}} />', () => {
   beforeEach(() => {
     props = {
       {{#requiredProps}}
-      {{key}}: {{{value}}}{{^coma}},{{/comma}}{{^propsExist}} // toDo you need to mock this props  property{{/propsExist}}
+      {{key}}: {{{value}}}{{^comma}},{{/comma}}{{^propsExist}} // toDo you need to mock this props  property{{/propsExist}}
       {{/requiredProps}}
     };
     mounted{{componentName}} = undefined;

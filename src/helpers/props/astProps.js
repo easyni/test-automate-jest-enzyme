@@ -1,4 +1,3 @@
-import { inspect } from 'util';
 import { getAPropsValue } from './propsHelper';
 
 export const formatProp = (prop) => {

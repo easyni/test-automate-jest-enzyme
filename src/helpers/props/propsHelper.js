@@ -29,3 +29,4 @@ export const isPropsTakeInCharge = type => type === 'func' ||
 
 export const isTheLastProps = (key, props) =>
   props[props.length - 1].key && props[props.length - 1].key === key;
+

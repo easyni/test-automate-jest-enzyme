@@ -1,6 +1,6 @@
 import inquirer from 'inquirer';
-
-import { fullRc } from './helpers/getFullRc';
+import { fullRc } from './helpers/rcfile/getFullRc';
+import { isTestAvailable } from './helpers/questions/avliable';
 
 inquirer.registerPrompt('directory', require('inquirer-directory'));
 
@@ -18,29 +18,35 @@ export function questions() {
         name: 'type',
         choices: allQuestion,
       },
-      {
+    ]).then((answersStep) => {
+      if (!isTestAvailable(answersStep.type)) {
+        console.log('\x1b[31m%s\x1b[0m', 'this test template is not available yet'); // eslint-disable-line
+        return Promise.reject();
+      }
+      answerToProcess = { ...answersStep };
+      return inquirer.prompt([{
         type: 'directory',
         name: 'to',
         message: 'what‘s the folder you wanna target ?',
         basePath: '.',
-      },
-    ]).then((answersStep1) => {
-      answerToProcess = { ...answersStep1 };
-      inquirer.prompt([{
+      }]);
+    }).then((answersStep) => {
+      answerToProcess = { ...answerToProcess, ...answersStep };
+      return inquirer.prompt([{
         type: 'confirm',
         name: 'confirm',
         message: `you confirm the process that you wanna make some
-      jest test for some ‘${answersStep1.type}‘ 
-      in that path : ‘${answersStep1.to}‘ ? `,
+      jest test for some ‘${answersStep.type}‘ 
+      in that path : ‘${answersStep.to}‘ ? `,
         basePath: '.',
-      }]).then((answersStep2) => {
-        if (answersStep2.confirm) {
-          resolve(answerToProcess);
-        } else {
-          reject();
-        }
-      });
-    });
+      }]);
+    }).then((answersStep) => {
+      if (answersStep.confirm) {
+        resolve(answerToProcess);
+      } else {
+        reject();
+      }
+    }).catch(() => reject());
   });
 }
 

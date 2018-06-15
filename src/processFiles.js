@@ -1,6 +1,6 @@
 import { lstatSync, readdirSync } from 'fs';
 import { join } from 'path';
-import { fullRc } from './helpers/getFullRc';
+import { fullRc } from './helpers/rcfile/getFullRc';
 
 const isDirectory = source => lstatSync(source).isDirectory();
 

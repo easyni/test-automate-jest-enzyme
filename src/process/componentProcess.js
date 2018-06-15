@@ -7,8 +7,9 @@ import stage3 from 'babel-preset-stage-3';
 import react from 'babel-preset-react';
 import { transformFileSync } from 'babel-core';
 import Mustache from 'mustache';
-import { getDefaultExportName, getAllProps, getRequiredProps } from '../helpers/astHelper';
-import { isPropsTakeInCharge, isTheLastProps } from '../helpers/propsHelper';
+import { getDefaultExportName } from '../helpers/ast/astHelper';
+import { getAllProps, getRequiredProps } from '../helpers/props/astProps';
+import { isPropsTakeInCharge, isTheLastProps } from '../helpers/props/propsHelper';
 
 const componentTemplate = `${__dirname}/../../templates/components.tpljs`;
 
